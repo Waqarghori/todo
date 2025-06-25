@@ -1,0 +1,183 @@
+/* --------------------------------------
+   Sleek & Professional Todo App Stylesheet
+   Optimized for light/dark mode + responsive
+   Updated: 25-May-2025
+-----------------------------------------*/
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"); */
+
+:root {
+  --clr-primary: #009688;
+  --clr-primary-dark: #00796b;
+  --clr-accent: #ff9800;
+  --clr-accent-dark: #ef6c00;
+  --clr-danger: #f44336;
+  --clr-danger-dark: #d32f2f;
+  --clr-bg: #f5f7fa;
+  --clr-surface: #ffffff;
+  --clr-text: #333;
+  --clr-shadow: rgba(0, 0, 0, 0.05);
+  --clr-edit-focus: #e0f2f1;
+} 
+
+
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: rgb(107, 41, 169);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+h1 {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.input-container input {
+  flex-grow: 1;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  background-color: rgb(69, 21, 114);
+  border: 2px solid rgb(69, 21, 114);
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+  outline: none;
+  width:100%;
+  color: white;
+}
+
+.input-container input:focus {
+  box-shadow: 0 0 0 3px rgba(0, 150, 136, 0.2);
+}
+
+.input-container button {
+  background-color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: black;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 150px;
+}
+
+.input-container button:hover {
+  background-color: white;
+}
+
+.task-container {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 60px;
+}
+
+.task-container ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.task-container li {
+  background-color: rgb(156, 80, 224);
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 6px var(--clr-shadow);
+  transition: transform 0.2s;
+  font-size: 24px;
+}
+
+
+
+.task-container li input[type="text"] {
+  flex-grow: 1;
+  border: none;
+  font-size: 24px;
+  background: transparent;
+  color: var(--clr-text);
+  outline: none;
+  transition: background 0.2s ease-in-out;
+  border-radius: 5px;
+  padding: 4px 8px;
+}
+
+.task-container li input[type="text"]:not([disabled]) {
+  background-color: var(--clr-edit-focus);
+  border: 1px solid var(--clr-primary);
+}
+
+.task-container li button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.task-container li button:first-of-type {
+  background-color: var(--clr-accent);
+  color: white;
+}
+
+.task-container li button:first-of-type:hover {
+  background-color: var(--clr-accent-dark);
+}
+
+.task-container li button:last-of-type {
+  background-color: var(--clr-danger);
+  color: white;
+}
+
+.task-container li button:last-of-type:hover {
+  background-color: var(--clr-danger-dark);
+}
+
+@media (max-width: 600px) {
+  .input-container {
+    flex-direction: column;
+  }
+  .input-container button {
+    width: 100%;
+  }
+  .task-container li {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .task-container li button {
+    width: 100%;
+    justify-content: center;
+  }
+  .task-container li button + button {
+    margin-top: 0.5rem;
+  }
+}
